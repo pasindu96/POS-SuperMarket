@@ -1,0 +1,17 @@
+C:\Users\Ishara\source\repos\posui\posui\bin\Debug\posui.exe.config
+C:\Users\Ishara\source\repos\posui\posui\bin\Debug\posui.exe
+C:\Users\Ishara\source\repos\posui\posui\bin\Debug\posui.pdb
+C:\Users\Ishara\source\repos\posui\posui\bin\Debug\Bunifu_UI_v1.5.3.dll
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.csprojAssemblyReference.cache
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.main.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.Properties.Resources.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.csproj.GenerateResource.cache
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.csproj.CoreCompileInputs.cache
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.csproj.CopyComplete
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.exe
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.pdb
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.login.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.add_user.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.supplier.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.inventory.resources
+C:\Users\Ishara\source\repos\posui\posui\obj\Debug\posui.settings.resources
