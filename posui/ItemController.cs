@@ -148,6 +148,38 @@ namespace posui
                 return false;
         }
 
+        public static Boolean updateStockQty(ItemDTO item)
+        {
+            int result = 0;
+
+            try
+            {
+
+                string query = "update pos.item SET quantity=@quantity where itemcode=@itemcode";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@quantity", item.getQuantity());
+                command.Parameters.AddWithValue("@itemcode", item.getItemCode());
+                conn.Open();
+
+                result = command.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return false;
+            }
+
+            Console.Read();
+            conn.Close();
+            if (result > 0)
+                return true;
+            else
+                return false;
+        }
+
         public static List<ItemDTO> viewItems()
         {
             List<ItemDTO> itemList = new List<ItemDTO>();

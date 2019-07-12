@@ -17,6 +17,7 @@ namespace posui
             InitializeComponent();
             rdbUser.Checked=true;
             loadUsers();
+            txtPassword.PasswordChar = '*';
         }
 
         private void settings_Load(object sender, EventArgs e)

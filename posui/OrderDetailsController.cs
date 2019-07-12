@@ -11,23 +11,34 @@ namespace posui
     class OrderDetailsController
     {
         static MySqlConnection conn = DBUtils.GetDBConnection();
-        public static void addOrderDetails(OrderDetailsDTO odDTO)
+        public static Boolean addOrderDetails(OrderDetailsDTO odDTO)
         {
-
-            /* try
+            int result;
+            try
              {
-                 String query="INSERT INTO pos.orderdetail (orderid,itemcode,quantity) VALUES (@orderid, @itemcode, @quantity)";
+                 String query= "INSERT INTO pos.orderdetail (orderid,itemcode,quantity) VALUES (@orderid, @itemcode, @quantity)";
 
-                 //MySqlCommand command = new MySqlCommand(query, conn);
-                 MySqlCommand command = new MySqlCommand(query,conn);
+                MySqlCommand command = new MySqlCommand(query,conn);
+                command.Parameters.AddWithValue("@orderid", odDTO.getOrderID());
+                command.Parameters.AddWithValue("@itemcode", odDTO.getItemCode());
+                command.Parameters.AddWithValue("@quantity", odDTO.getQuantity());
 
-
+                conn.Open();
+                result = command.ExecuteNonQuery();
              }
              catch (Exception ex)
              {
-
-                 throw;
-             }*/
+                Console.WriteLine("Error : "+ex.ToString());
+                MessageBox.Show("Error : " + ex.ToString());
+                conn.Close();
+                return false;
+             }
+            conn.Close();
+            Console.ReadLine();
+            if (result == 1)
+                return true;
+            else
+                return false;   
         }
     }
 }

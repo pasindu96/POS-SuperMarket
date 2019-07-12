@@ -34,3 +34,4 @@ E:\C # project\Jayananda Super Centre\posui\bin\Debug\CrystalDecisions.ReportApp
 E:\C # project\Jayananda Super Centre\posui\bin\Debug\CrystalDecisions.ReportAppServer.ObjectFactory.dll
 E:\C # project\Jayananda Super Centre\posui\bin\Debug\CrystalDecisions.ReportAppServer.CommonControls.dll
 E:\C # project\Jayananda Super Centre\posui\bin\Debug\stdole.dll
+E:\C # project\Jayananda Super Centre\posui\obj\Debug\posui.checkout.resources

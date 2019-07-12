@@ -11,40 +11,39 @@ namespace posui
     class OrderController
     {
         static MySqlConnection conn = DBUtils.GetDBConnection();
-        public static void addNewOrder(OrderDTO orderDTO)
+        public static Boolean addNewOrder(OrderDTO orderDTO)
         {
+            int result=0;
             try
             {
 
-                String query = "INSERT INTO pos.orders (orderid,custid,amount,date) VALUES (@orderid, @custid, @amount,CURRENT_TIMESTAMP)";
+                String query = "INSERT INTO pos.orders (orderid,custmobile,amount,date) VALUES (@orderid, @custmobile, @amount,@date)";
 
                 MySqlCommand command = new MySqlCommand(query, conn);
 
-                //Console.WriteLine(custDTO.getNic() + " " + custDTO.getName());
-
                 command.Parameters.AddWithValue("@orderid", orderDTO.getOrderID());
-                command.Parameters.AddWithValue("@custid", orderDTO.getCustID());
+                command.Parameters.AddWithValue("@custmobile",orderDTO.getCustMobile());
                 command.Parameters.AddWithValue("@amount", orderDTO.getAmount());
+                command.Parameters.AddWithValue("@date", orderDTO.getDate());
+
 
                 conn.Open();
-
-                if (command.ExecuteNonQuery() == 1)
-                {
-                    MessageBox.Show("DATA UPDATED");
-                }
-                else
-                {
-                    MessageBox.Show("Data NOT UPDATED");
-                }
-
+                result = command.ExecuteNonQuery();
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return false;
+
             }
 
             Console.Read();
             conn.Close();
+            if (result == 1)
+                return true;
+            else
+                return false;
         }
 
         public static void searchOrder(String orderID)
@@ -80,6 +79,35 @@ namespace posui
 
         }
 
+        //----------------------------------------------------------------------------------------
+        public static int countOrders()
+        {
+            int result = 0;
+            try
+            {
+                String query = "select COUNT(orderid) from orders";
+               
+                MySqlCommand command = new MySqlCommand(query, conn);  
+                conn.Open();
+
+                result = int.Parse(command.ExecuteScalar().ToString());
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return result;
+            }
+
+            Console.Read();
+            conn.Close();
+            return result;
+
+        }
+
+        //-----------------------------------------------------------------------------------------
+
         public static void removeOrder(String orderid)
         {
             try
@@ -112,10 +140,10 @@ namespace posui
             try
             {
 
-                string query = "update pos.orders SET custid=@custid,amount=@amount where orderid=@orderid";
+                string query = "update pos.orders SET custmobile=@custmobile,amount=@amount where orderid=@orderid";
 
                 MySqlCommand command = new MySqlCommand(query, conn);
-                command.Parameters.AddWithValue("@custid", orderDTO.getCustID());
+                command.Parameters.AddWithValue("@custid", orderDTO.getCustMobile());
                 command.Parameters.AddWithValue("@amount", orderDTO.getAmount());
                 command.Parameters.AddWithValue("@orderid", orderDTO.getOrderID());
                 conn.Open();

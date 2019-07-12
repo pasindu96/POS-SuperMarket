@@ -63,6 +63,12 @@
     <Compile Include="add customer.Designer.cs">
       <DependentUpon>add customer.cs</DependentUpon>
     </Compile>
+    <Compile Include="checkout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="checkout.Designer.cs">
+      <DependentUpon>checkout.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomerController.cs" />
     <Compile Include="CustomerDTO.cs" />
     <Compile Include="DBUtils.cs" />
@@ -111,6 +117,9 @@
     <Compile Include="UserLoginDTO.cs" />
     <EmbeddedResource Include="add customer.resx">
       <DependentUpon>add customer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="checkout.resx">
+      <DependentUpon>checkout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventory.resx">
       <DependentUpon>inventory.cs</DependentUpon>
@@ -194,6 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-search-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\plus.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

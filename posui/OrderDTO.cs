@@ -8,58 +8,58 @@ namespace posui
 {
     class OrderDTO
     {
-        private String orderID;
-        private String custID;
+        private int orderID;
+        private String mobile;
         private double amount;
-        private DateTime date;
+        private string date;
         public OrderDTO() { }
-        public OrderDTO(string orderID, string custID, Double amount)
+        public OrderDTO(int orderID, string mobile, Double amount)
         {
             this.orderID = orderID;
-            this.custID = custID;
+            this.mobile = mobile;
             this.amount = amount;
 
         }
-        public OrderDTO(string orderID, string custID, Double amount, DateTime date)
+        public OrderDTO(int orderID, string custID, Double amount, string date)
         {
             this.orderID = orderID;
-            this.custID = custID;
+            this.mobile = custID;
             this.amount = amount;
             this.date = date;
         }
 
-        public DateTime getDate()
+        public string getDate()
         {
             return date;
         }
 
 
-        public void setDate(DateTime date)
+        public void setDate(string date)
         {
             this.date = date;
         }
 
-        public String getOrderID()
+        public int getOrderID()
         {
             return orderID;
         }
 
 
-        public void setOrderID(String orderID)
+        public void setOrderID(int orderID)
         {
             this.orderID = orderID;
         }
 
 
-        public String getCustID()
+        public String getCustMobile()
         {
-            return custID;
+            return mobile;
         }
 
 
-        public void setCustID(String custID)
+        public void setCustMobile(String mobile)
         {
-            this.custID = custID;
+            this.mobile = mobile;
         }
 
         public double getAmount()

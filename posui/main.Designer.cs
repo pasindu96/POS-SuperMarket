@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(main));
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
-            this.signoutbtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnSignOut = new Bunifu.Framework.UI.BunifuImageButton();
             this.label2 = new System.Windows.Forms.Label();
             this.lblUsername = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -44,7 +44,7 @@
             this.suppliersbtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.inventorybtn = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.signoutbtn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkTurquoise;
-            this.panel1.Controls.Add(this.signoutbtn);
+            this.panel1.Controls.Add(this.btnSignOut);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblUsername);
             this.panel1.Controls.Add(this.pictureBox1);
@@ -65,19 +65,19 @@
             this.panel1.Size = new System.Drawing.Size(1384, 40);
             this.panel1.TabIndex = 0;
             // 
-            // signoutbtn
+            // btnSignOut
             // 
-            this.signoutbtn.BackColor = System.Drawing.Color.Transparent;
-            this.signoutbtn.Image = ((System.Drawing.Image)(resources.GetObject("signoutbtn.Image")));
-            this.signoutbtn.ImageActive = null;
-            this.signoutbtn.Location = new System.Drawing.Point(1315, 0);
-            this.signoutbtn.Name = "signoutbtn";
-            this.signoutbtn.Size = new System.Drawing.Size(30, 40);
-            this.signoutbtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.signoutbtn.TabIndex = 0;
-            this.signoutbtn.TabStop = false;
-            this.signoutbtn.Zoom = 10;
-            this.signoutbtn.Click += new System.EventHandler(this.signoutbtn_Click);
+            this.btnSignOut.BackColor = System.Drawing.Color.Transparent;
+            this.btnSignOut.Image = ((System.Drawing.Image)(resources.GetObject("btnSignOut.Image")));
+            this.btnSignOut.ImageActive = null;
+            this.btnSignOut.Location = new System.Drawing.Point(1315, 0);
+            this.btnSignOut.Name = "btnSignOut";
+            this.btnSignOut.Size = new System.Drawing.Size(30, 40);
+            this.btnSignOut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnSignOut.TabIndex = 0;
+            this.btnSignOut.TabStop = false;
+            this.btnSignOut.Zoom = 10;
+            this.btnSignOut.Click += new System.EventHandler(this.signoutbtn_Click);
             // 
             // label2
             // 
@@ -191,6 +191,7 @@
             this.checkoutbtn.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.checkoutbtn.Textcolor = System.Drawing.Color.White;
             this.checkoutbtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkoutbtn.Click += new System.EventHandler(this.Checkoutbtn_Click);
             // 
             // settingsbtn
             // 
@@ -351,7 +352,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.signoutbtn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnSignOut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -371,7 +372,7 @@
         private Bunifu.Framework.UI.BunifuFlatButton inventorybtn;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel homepanel;
-        private Bunifu.Framework.UI.BunifuImageButton signoutbtn;
+        private Bunifu.Framework.UI.BunifuImageButton btnSignOut;
     }
 }
 

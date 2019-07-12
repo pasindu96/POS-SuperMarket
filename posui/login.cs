@@ -17,6 +17,7 @@ namespace posui
             InitializeComponent();
             txtUserName.Focus();
             txtUserName.Select();
+            
         }
 
         private void pwtxt_OnTextChange(object sender, EventArgs e)

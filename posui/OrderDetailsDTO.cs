@@ -32,6 +32,10 @@ namespace posui
         {
             return itemcode;
         }
+        public void setItemCode(String itemcode)
+        {
+            this.itemcode = itemcode;
+        }
         public void setquantity(int quantity)
         {
             this.quantity = quantity;

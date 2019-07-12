@@ -72,7 +72,10 @@ namespace posui
 
         private void signoutbtn_Click(object sender, EventArgs e)
         {
-            Dispose();
+            this.Dispose();
+            login m = new login();
+            m.ShowDialog();
+            
         }
 
         private void bunifuFlatButton2_Click(object sender, EventArgs e)
@@ -101,5 +104,15 @@ namespace posui
             homepanel.Controls.Add(f);
             f.Show();
         }
+
+        private void Checkoutbtn_Click(object sender, EventArgs e)
+        {
+            homepanel.Controls.Clear();    // load new_user panel
+            checkout f = new checkout();
+            f.TopLevel = false;
+            homepanel.Controls.Add(f);
+            f.Show();
+        }
     }
+    
 }
