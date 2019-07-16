@@ -8,6 +8,7 @@ namespace posui
 {
     class OrderDetailsDTO
     {
+        
         private string orderid;
         private string itemcode;
         private int quantity;

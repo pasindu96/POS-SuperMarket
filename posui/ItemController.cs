@@ -89,6 +89,72 @@ namespace posui
 
         }
 
+        public static ItemDTO searchItemDescription(String description)
+        {
+            ItemDTO itemDTO = new ItemDTO();
+            try
+            {
+                String query = "select * from item where itemname=@itemname;";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@itemname", description);
+                conn.Open();
+
+                MySqlDataReader dataReader = command.ExecuteReader();
+
+                //int count = 0;
+                while (dataReader.Read())
+                {
+                    itemDTO.setItemCode(dataReader["itemcode"].ToString());
+                    itemDTO.setItemName(dataReader["itemname"].ToString());
+                    itemDTO.setPrice(double.Parse(dataReader["price"].ToString()));
+                    itemDTO.setQuantity(int.Parse(dataReader["quantity"].ToString()));
+                    //Console.WriteLine(dataReader["itemcode"] + " " + dataReader["itemname"] + " " + dataReader["quantity"] + " " + dataReader["price"]);
+                    //count++;
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return null;
+            }
+
+            Console.Read();
+            conn.Close();
+            return itemDTO;
+
+        }
+
+
+        
+         public static int countItems()
+        {
+            int result = 0;
+            try
+            {
+                String query = "select COUNT(itemcode) from item ;";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+                conn.Open();
+
+                result = int.Parse(command.ExecuteScalar().ToString());
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return result;
+            }
+
+            Console.Read();
+            conn.Close();
+            return result;
+
+        }
+        
         public static Boolean removeItem(String itemcode)
         {
             int result = 0;

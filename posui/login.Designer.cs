@@ -36,11 +36,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
             this.loginbtn = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.txtPassword = new Bunifu.Framework.UI.BunifuTextbox();
             this.txtUserName = new Bunifu.Framework.UI.BunifuTextbox();
             this.label1 = new System.Windows.Forms.Label();
             this.minimizebtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.closebtn = new Bunifu.Framework.UI.BunifuImageButton();
+            this.txtPassword1 = new System.Windows.Forms.TextBox();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizebtn)).BeginInit();
@@ -58,11 +58,11 @@
             this.mainPanel.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.txtPassword1);
             this.mainPanel.Controls.Add(this.pictureBox1);
             this.mainPanel.Controls.Add(this.label2);
             this.mainPanel.Controls.Add(this.btnCancel);
             this.mainPanel.Controls.Add(this.loginbtn);
-            this.mainPanel.Controls.Add(this.txtPassword);
             this.mainPanel.Controls.Add(this.txtUserName);
             this.mainPanel.ForeColor = System.Drawing.Color.White;
             this.mainPanel.Location = new System.Drawing.Point(542, 158);
@@ -95,7 +95,7 @@
             this.btnCancel.BackColor = System.Drawing.Color.DarkTurquoise;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnCancel.BorderRadius = 0;
-            this.btnCancel.ButtonText = "Cancal";
+            this.btnCancel.ButtonText = "Cancel";
             this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCancel.DisabledColor = System.Drawing.Color.Gray;
             this.btnCancel.Iconcolor = System.Drawing.Color.Transparent;
@@ -118,7 +118,7 @@
             this.btnCancel.selected = false;
             this.btnCancel.Size = new System.Drawing.Size(75, 34);
             this.btnCancel.TabIndex = 1;
-            this.btnCancel.Text = "Cancal";
+            this.btnCancel.Text = "Cancel";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnCancel.Textcolor = System.Drawing.Color.White;
             this.btnCancel.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -158,29 +158,15 @@
             this.loginbtn.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.loginbtn.Click += new System.EventHandler(this.Loginbtn_Click);
             // 
-            // txtPassword
-            // 
-            this.txtPassword.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.txtPassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtPassword.BackgroundImage")));
-            this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.txtPassword.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.txtPassword.Icon = ((System.Drawing.Image)(resources.GetObject("txtPassword.Icon")));
-            this.txtPassword.Location = new System.Drawing.Point(29, 207);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.Size = new System.Drawing.Size(250, 42);
-            this.txtPassword.TabIndex = 0;
-            this.txtPassword.text = "Password";
-            this.txtPassword.OnTextChange += new System.EventHandler(this.pwtxt_OnTextChange);
-            // 
             // txtUserName
             // 
-            this.txtUserName.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.txtUserName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUserName.BackgroundImage")));
             this.txtUserName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtUserName.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.txtUserName.Icon = ((System.Drawing.Image)(resources.GetObject("txtUserName.Icon")));
-            this.txtUserName.Location = new System.Drawing.Point(29, 159);
+            this.txtUserName.Location = new System.Drawing.Point(29, 166);
             this.txtUserName.Name = "txtUserName";
             this.txtUserName.Size = new System.Drawing.Size(250, 42);
             this.txtUserName.TabIndex = 0;
@@ -225,6 +211,18 @@
             this.closebtn.Zoom = 10;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
             // 
+            // txtPassword1
+            // 
+            this.txtPassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtPassword1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword1.Location = new System.Drawing.Point(29, 226);
+            this.txtPassword1.Multiline = true;
+            this.txtPassword1.Name = "txtPassword1";
+            this.txtPassword1.PasswordChar = '*';
+            this.txtPassword1.Size = new System.Drawing.Size(250, 37);
+            this.txtPassword1.TabIndex = 5;
+            this.txtPassword1.Text = "password";
+            // 
             // login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,11 +255,11 @@
         private Bunifu.Framework.UI.BunifuTextbox txtUserName;
         private Bunifu.Framework.UI.BunifuFlatButton btnCancel;
         private Bunifu.Framework.UI.BunifuFlatButton loginbtn;
-        private Bunifu.Framework.UI.BunifuTextbox txtPassword;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private Bunifu.Framework.UI.BunifuImageButton closebtn;
         private Bunifu.Framework.UI.BunifuImageButton minimizebtn;
+        private System.Windows.Forms.TextBox txtPassword1;
     }
 }

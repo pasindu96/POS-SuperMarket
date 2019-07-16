@@ -43,12 +43,11 @@
             this.btnAddUser = new Bunifu.Framework.UI.BunifuThinButton2();
             this.btnSupplierUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
             this.tblSupplier = new System.Windows.Forms.DataGridView();
-            this.btnSupplierDelete = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
             this.supplierid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.address = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobile = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSupplierDelete = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.tblSupplier)).BeginInit();
             this.SuspendLayout();
             // 
@@ -75,9 +74,9 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(180, 159);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 24);
+            this.label2.Size = new System.Drawing.Size(116, 24);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Supplier ID";
+            this.label2.Text = "Supplier NIC";
             // 
             // label3
             // 
@@ -212,6 +211,30 @@
             this.tblSupplier.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblSupplier_CellClick);
             this.tblSupplier.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblSupplier_CellContentClick);
             // 
+            // supplierid
+            // 
+            this.supplierid.HeaderText = "SupplierID";
+            this.supplierid.Name = "supplierid";
+            this.supplierid.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Supplier name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // address
+            // 
+            this.address.HeaderText = "Supplier Address";
+            this.address.Name = "address";
+            this.address.ReadOnly = true;
+            // 
+            // mobile
+            // 
+            this.mobile.HeaderText = "Supplier mobile";
+            this.mobile.Name = "mobile";
+            this.mobile.ReadOnly = true;
+            // 
             // btnSupplierDelete
             // 
             this.btnSupplierDelete.ActiveBorderThickness = 1;
@@ -238,55 +261,6 @@
             this.btnSupplierDelete.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnSupplierDelete.Click += new System.EventHandler(this.BtnSupplierDelete_Click);
             // 
-            // btnCancel
-            // 
-            this.btnCancel.ActiveBorderThickness = 1;
-            this.btnCancel.ActiveCornerRadius = 20;
-            this.btnCancel.ActiveFillColor = System.Drawing.Color.DarkRed;
-            this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancel.ActiveLineColor = System.Drawing.Color.SeaGreen;
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.ButtonText = "Cancel";
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.SeaGreen;
-            this.btnCancel.IdleBorderThickness = 1;
-            this.btnCancel.IdleCornerRadius = 20;
-            this.btnCancel.IdleFillColor = System.Drawing.Color.White;
-            this.btnCancel.IdleForecolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancel.IdleLineColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancel.Location = new System.Drawing.Point(719, 460);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(103, 41);
-            this.btnCancel.TabIndex = 11;
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // supplierid
-            // 
-            this.supplierid.HeaderText = "SupplierID";
-            this.supplierid.Name = "supplierid";
-            this.supplierid.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Supplier name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // address
-            // 
-            this.address.HeaderText = "Supplier Address";
-            this.address.Name = "address";
-            this.address.ReadOnly = true;
-            // 
-            // mobile
-            // 
-            this.mobile.HeaderText = "Supplier mobile";
-            this.mobile.Name = "mobile";
-            this.mobile.ReadOnly = true;
-            // 
             // supplier
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -294,7 +268,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1140, 660);
             this.Controls.Add(this.tblSupplier);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnSupplierDelete);
             this.Controls.Add(this.btnSupplierUpdate);
             this.Controls.Add(this.btnAddUser);
@@ -331,7 +304,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 btnAddUser;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSupplierUpdate;
         private System.Windows.Forms.DataGridView tblSupplier;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
         private Bunifu.Framework.UI.BunifuThinButton2 btnSupplierDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn supplierid;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -16,48 +17,76 @@ namespace posui
         {
             InitializeComponent();
             loadTable();
+            txtItemCode.Focus();
+            loadItemCode();
         }
 
+        private void loadItemCode()
+        {
+            int current=ItemController.countItems();
+            txtItemCode.Text = (current+1001).ToString();
+        }
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            ItemDTO itemDTO = new ItemDTO(
+            try
+            {
+                ItemDTO itemDTO = new ItemDTO(
                     txtItemCode.Text,
                     txtName.Text,
                     int.Parse(txtQty.Text),
                     double.Parse(txtPrice.Text)
                 );
-            Boolean result= ItemController.addNewItem(itemDTO);
-            if (result)
-            {
-                MessageBox.Show("Item added Successful");
+                Boolean result = ItemController.addNewItem(itemDTO);
+                if (result)
+                {
+                    MessageBox.Show("Item added Successful");
+                    
+                    loadItemCode();
+                }
+                else
+                {
+                    MessageBox.Show("Error occured.. Item not added to the database");
+                }
+                clear();
+                loadTable();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured.. Item not added to the database");
+                Console.WriteLine("error : " + ex.ToString());
+                clear();
+                MessageBox.Show("Enter only accepted types only");
             }
-            clear();
-            loadTable();
         }
 
         private void BtnUpdate_Click(object sender, EventArgs e)
         {
-            ItemDTO itemDTO = new ItemDTO(
+            try
+            {
+                ItemDTO itemDTO = new ItemDTO(
                     txtItemCode.Text,
                     txtName.Text,
                     int.Parse(txtQty.Text),
                     double.Parse(txtPrice.Text)
                 );
-            Boolean result = ItemController.updateItem(itemDTO);
-            if (result)
-            {
-                MessageBox.Show("Item updated Successful");
+                Boolean result = ItemController.updateItem(itemDTO);
+                if (result)
+                {
+                    MessageBox.Show("Item updated Successful");
+                }
+                else
+                {
+                    MessageBox.Show("Error occured.. Item not updated in the database");
+                }
+                clear();
+                loadTable();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("Error occured.. Item not updated in the database");
+                Console.WriteLine("error : "+ex.ToString());
+                clear();
+                MessageBox.Show("Enter only accepted types only");
             }
-            clear();
-            loadTable();
+            
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)
@@ -88,10 +117,11 @@ namespace posui
         }
         void clear()
         {
-            txtItemCode.Text = "";
+            loadItemCode();
             txtName.Text = "";
             txtPrice.Text = "";
             txtQty.Text = "";
+            txtItemCode.Focus();
 
         }
 
@@ -104,6 +134,51 @@ namespace posui
                 txtName.Text = row.Cells[1].Value.ToString();
                 txtQty.Text = row.Cells[2].Value.ToString();
                 txtPrice.Text = row.Cells[3].Value.ToString();
+            }
+        }
+        private Boolean ValidateText()
+        {
+            Regex regex = new Regex("^[0-9]{10,10}");
+            Regex nameRegex = new Regex("^[a-z][A-Z]{1,}");
+            Regex nicRegex = new Regex("^[0-9]{9,9}[v|x]");
+
+            if (Validation.validateTextFields(txtItemCode.Text))
+            {
+                if (Validation.validateTextFields(txtName.Text))
+                {
+                    if (Validation.validateTextFields(txtPrice.Text))
+                    {
+                        if (Validation.validateTextFields(txtQty.Text))
+                        {
+                            return true;
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please fill the quantity");
+                            txtQty.Focus();
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill the price");
+                        txtPrice.Focus();
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill the description");
+                    txtName.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill the itemcode");
+                txtItemCode.Focus();
+                return false;
             }
         }
     }

@@ -31,7 +31,7 @@ namespace posui
             {
                 Console.WriteLine("Error : "+ex.ToString());
                 connection.Close();
-                MessageBox.Show("Error : " + ex.ToString());
+               // MessageBox.Show("Error : " + ex.ToString());
                 return false;
             }
 
@@ -76,7 +76,7 @@ namespace posui
             {
                 Console.WriteLine("Error: " + ex.Message);
                 connection.Close();
-                MessageBox.Show("Error : " + ex.ToString());
+                //MessageBox.Show("Error : " + ex.ToString());
                 return null;
             }
 
@@ -102,7 +102,7 @@ namespace posui
             {
                 Console.WriteLine("Error : "+ex.ToString());
                 connection.Close();
-                MessageBox.Show("Error : " + ex.ToString());
+                //MessageBox.Show("Error : " + ex.ToString());
                 return false;
             }
             connection.Close();
@@ -135,7 +135,7 @@ namespace posui
             {
                 Console.WriteLine("Error: " + ex.Message);
                 connection.Close();
-                MessageBox.Show("Error : " + ex.ToString());
+                //MessageBox.Show("Error : " + ex.ToString());
                 return false;
             }
 
@@ -184,7 +184,7 @@ namespace posui
             {
                 Console.WriteLine("Error: " + ex.Message);
                 connection.Close();
-                MessageBox.Show("Error : " + ex.ToString());
+                //MessageBox.Show("Error : " + ex.ToString());
                 return null;
             }
 

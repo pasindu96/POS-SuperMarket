@@ -51,7 +51,6 @@
             this.addressColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.mobileColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addUserDeleteBtn = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.addUserCancalBtn = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.tblViewCustomer)).BeginInit();
             this.SuspendLayout();
             // 
@@ -368,31 +367,6 @@
             this.addUserDeleteBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.addUserDeleteBtn.Click += new System.EventHandler(this.AddUserDeleteBtn_Click);
             // 
-            // addUserCancalBtn
-            // 
-            this.addUserCancalBtn.ActiveBorderThickness = 1;
-            this.addUserCancalBtn.ActiveCornerRadius = 20;
-            this.addUserCancalBtn.ActiveFillColor = System.Drawing.Color.DarkRed;
-            this.addUserCancalBtn.ActiveForecolor = System.Drawing.Color.White;
-            this.addUserCancalBtn.ActiveLineColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.addUserCancalBtn.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.addUserCancalBtn.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("addUserCancalBtn.BackgroundImage")));
-            this.addUserCancalBtn.ButtonText = "Cancel";
-            this.addUserCancalBtn.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.addUserCancalBtn.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.addUserCancalBtn.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.addUserCancalBtn.IdleBorderThickness = 1;
-            this.addUserCancalBtn.IdleCornerRadius = 20;
-            this.addUserCancalBtn.IdleFillColor = System.Drawing.Color.White;
-            this.addUserCancalBtn.IdleForecolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.addUserCancalBtn.IdleLineColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.addUserCancalBtn.Location = new System.Drawing.Point(712, 460);
-            this.addUserCancalBtn.Margin = new System.Windows.Forms.Padding(5);
-            this.addUserCancalBtn.Name = "addUserCancalBtn";
-            this.addUserCancalBtn.Size = new System.Drawing.Size(103, 41);
-            this.addUserCancalBtn.TabIndex = 9;
-            this.addUserCancalBtn.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // add_user
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -400,7 +374,6 @@
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1140, 660);
             this.Controls.Add(this.tblViewCustomer);
-            this.Controls.Add(this.addUserCancalBtn);
             this.Controls.Add(this.addUserDeleteBtn);
             this.Controls.Add(this.addUserUpdatelBtn);
             this.Controls.Add(this.addUserAddBtn);
@@ -444,7 +417,6 @@
         private Bunifu.Framework.UI.BunifuThinButton2 addUserAddBtn;
         private Bunifu.Framework.UI.BunifuThinButton2 addUserUpdatelBtn;
         private System.Windows.Forms.DataGridView tblViewCustomer;
-        private Bunifu.Framework.UI.BunifuThinButton2 addUserCancalBtn;
         private Bunifu.Framework.UI.BunifuThinButton2 addUserDeleteBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nicColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameColumn;

@@ -46,38 +46,81 @@ namespace posui
                 return false;
         }
 
-        public static void searchOrder(String orderID)
+        public static List<OrderDTO> searchOrder(String date)
         {
+            List<OrderDTO> orderList = new List<OrderDTO>();
+            //orderList = null;
             try
             {
-                String query = "select * from orders where orderid=@orderid;";
+                String query = "select * from orders where date=@date;";
 
                 MySqlCommand command = new MySqlCommand(query, conn);
-                command.Parameters.AddWithValue("@orderid", orderID);
+                command.Parameters.AddWithValue("@date", date);
                 conn.Open();
-
+                
                 MySqlDataReader dataReader = command.ExecuteReader();
-                //int result = command.ExecuteNonQuery();
-                //using (SqlDataReader reader = command.ExecuteReader())
-                int count = 0;
                 while (dataReader.Read())
                 {
-                    Console.WriteLine(dataReader["orderid"] + " " + dataReader["custid"] + " " + dataReader["amount"] + " " + dataReader["date"]);
-                    count++;
+                    orderList.Add(new OrderDTO(
+                             int.Parse(dataReader["orderid"].ToString()),
+                             dataReader["custmobile"].ToString(),
+                             double.Parse(dataReader["amount"].ToString()),
+                             dataReader["date"].ToString()
+                     ));
                 }
-                if (count == 0)
-                    MessageBox.Show("No relevant data..");
+                
 
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return null;
             }
 
             Console.Read();
             conn.Close();
-
+            return orderList;
         }
+
+        public static List<OrderDTO> searchPeriodicOrder(String startDate,string endDate)
+        {
+            List<OrderDTO> orderList = new List<OrderDTO>();
+            //orderList = null;
+            try
+            {
+                String query = "SELECT * FROM orders WHERE date BETWEEN @startDate AND @endDate;";
+
+                MySqlCommand command = new MySqlCommand(query, conn);
+                command.Parameters.AddWithValue("@startDate", startDate);
+                command.Parameters.AddWithValue("@endDate", endDate);
+                conn.Open();
+
+                MySqlDataReader dataReader = command.ExecuteReader();
+                while (dataReader.Read())
+                {
+                    orderList.Add(new OrderDTO(
+                             int.Parse(dataReader["orderid"].ToString()),
+                             dataReader["custmobile"].ToString(),
+                             double.Parse(dataReader["amount"].ToString()),
+                             dataReader["date"].ToString()
+                     ));
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error: " + ex.Message);
+                conn.Close();
+                return null;
+            }
+
+            Console.Read();
+            conn.Close();
+            return orderList;
+        }
+
 
         //----------------------------------------------------------------------------------------
         public static int countOrders()
@@ -130,6 +173,7 @@ namespace posui
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                conn.Close();
             }
             conn.Close();
         }
@@ -160,6 +204,7 @@ namespace posui
             }
             catch (Exception ex)
             {
+                conn.Close();
                 Console.WriteLine("Error: " + ex.Message);
             }
 

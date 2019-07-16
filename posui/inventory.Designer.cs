@@ -41,14 +41,13 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.tblItem = new System.Windows.Forms.DataGridView();
-            this.btnCancel = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
-            this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
             this.itemCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnDelete = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnUpdate = new Bunifu.Framework.UI.BunifuThinButton2();
+            this.btnAdd = new Bunifu.Framework.UI.BunifuThinButton2();
             ((System.ComponentModel.ISupportInitialize)(this.tblItem)).BeginInit();
             this.SuspendLayout();
             // 
@@ -112,6 +111,7 @@
             // 
             this.txtItemCode.Location = new System.Drawing.Point(318, 161);
             this.txtItemCode.Name = "txtItemCode";
+            this.txtItemCode.ReadOnly = true;
             this.txtItemCode.Size = new System.Drawing.Size(171, 20);
             this.txtItemCode.TabIndex = 2;
             // 
@@ -153,30 +153,29 @@
             this.tblItem.TabIndex = 3;
             this.tblItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblItem_CellClick);
             // 
-            // btnCancel
+            // itemCode
             // 
-            this.btnCancel.ActiveBorderThickness = 1;
-            this.btnCancel.ActiveCornerRadius = 20;
-            this.btnCancel.ActiveFillColor = System.Drawing.Color.DarkRed;
-            this.btnCancel.ActiveForecolor = System.Drawing.Color.White;
-            this.btnCancel.ActiveLineColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ControlLight;
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
-            this.btnCancel.ButtonText = "Cancel";
-            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.DarkTurquoise;
-            this.btnCancel.IdleBorderThickness = 1;
-            this.btnCancel.IdleCornerRadius = 20;
-            this.btnCancel.IdleFillColor = System.Drawing.Color.White;
-            this.btnCancel.IdleForecolor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancel.IdleLineColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCancel.Location = new System.Drawing.Point(739, 460);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(5);
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(103, 41);
-            this.btnCancel.TabIndex = 10;
-            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.itemCode.HeaderText = "Item Code";
+            this.itemCode.Name = "itemCode";
+            this.itemCode.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.HeaderText = "Name";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // price
+            // 
+            this.price.HeaderText = "Price";
+            this.price.Name = "price";
+            this.price.ReadOnly = true;
+            // 
+            // quantity
+            // 
+            this.quantity.HeaderText = "Quantity";
+            this.quantity.Name = "quantity";
+            this.quantity.ReadOnly = true;
             // 
             // btnDelete
             // 
@@ -256,37 +255,12 @@
             this.btnAdd.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // itemCode
-            // 
-            this.itemCode.HeaderText = "Item Code";
-            this.itemCode.Name = "itemCode";
-            this.itemCode.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.HeaderText = "Name";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // price
-            // 
-            this.price.HeaderText = "Price";
-            this.price.Name = "price";
-            this.price.ReadOnly = true;
-            // 
-            // quantity
-            // 
-            this.quantity.HeaderText = "Quantity";
-            this.quantity.Name = "quantity";
-            this.quantity.ReadOnly = true;
-            // 
             // inventory
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLight;
             this.ClientSize = new System.Drawing.Size(1140, 660);
-            this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnUpdate);
             this.Controls.Add(this.btnAdd);
@@ -323,7 +297,6 @@
         private System.Windows.Forms.TextBox txtItemCode;
         private System.Windows.Forms.DataGridView tblItem;
         private Bunifu.Framework.UI.BunifuThinButton2 btnAdd;
-        private Bunifu.Framework.UI.BunifuThinButton2 btnCancel;
         private Bunifu.Framework.UI.BunifuThinButton2 btnDelete;
         private Bunifu.Framework.UI.BunifuThinButton2 btnUpdate;
         private System.Windows.Forms.DataGridViewTextBoxColumn itemCode;

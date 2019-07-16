@@ -18,6 +18,7 @@ namespace posui
             txtUserName.Focus();
             txtUserName.Select();
             
+            
         }
 
         private void pwtxt_OnTextChange(object sender, EventArgs e)
@@ -64,17 +65,17 @@ namespace posui
                     txtUserName.Focus();
                 }*/
                 UserLoginDTO loginDTO = LoginController.searchUser((txtUserName.text));
-                if (loginDTO.getUsername() == txtUserName.text && loginDTO.getPassword() == txtPassword.text)
+                if (loginDTO.getUsername() == txtUserName.text && loginDTO.getPassword() == txtPassword1.Text)
                 {
                     this.Hide();
-                    main m = new main(loginDTO.getName());
+                    main m = new main(loginDTO.getName(),loginDTO.getPosition());
                     m.ShowDialog();
                 }
                 else
                 {
                     MessageBox.Show("Invalid Username or password ");
                     txtUserName.text = "";
-                    txtPassword.text = "";
+                    txtPassword1.Text = "";
                     txtUserName.Focus();
                 }
             }

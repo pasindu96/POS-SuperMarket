@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="posui.add_user" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CEAAAAIAADQQDIAARgCAgAgGCgAEgIAgAAgABgAAAA0=</HashCode>
+      <FileName>add customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.supplier" Collapsed="true">
+    <Position X="2" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AnAAAABEACACIBEAoACCAAACEEIEgIAACAAAgAAAgAA=</HashCode>
+      <FileName>add supplier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.checkout" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAACABgAASIBFxARIACADGBSAAIAwBSABEAIA4ECAAE=</HashCode>
+      <FileName>checkout.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.CustomerController">
+    <Position X="12.25" Y="1" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAAAAAAAAQAIQAAAAMAAAAAAAA=</HashCode>
+      <FileName>CustomerController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.CustomerDTO">
+    <Position X="7.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAgAAIAACgAAAAAAAACAAAAAIEAABAAAAEggAAAAA=</HashCode>
+      <FileName>CustomerDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.DBUtils">
+    <Position X="9" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DBUtils.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.inventory" Collapsed="true">
+    <Position X="2" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AGARAAAAACAQAREQAACAAAACBAAEgICAAAAIAgAQAAQ=</HashCode>
+      <FileName>inventory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.ItemController">
+    <Position X="11" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAEAAAAQAACCAQAAAAABAAAAAAAAAA=</HashCode>
+      <FileName>ItemController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.ItemDTO">
+    <Position X="4" Y="4.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAABBAIABAAAAQAAEAAAAVAAAAAAACCAAAABAAAAAAA=</HashCode>
+      <FileName>ItemDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.login" Collapsed="true">
+    <Position X="7.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAIAAQACABABEAIACgAAACAAUAAAAAQAAAgABAIAA=</HashCode>
+      <FileName>login.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.LoginController">
+    <Position X="17.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAAAAAAQAAAAAAQAIAAAAAABAAAAAAA=</HashCode>
+      <FileName>LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.LoginDTO">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAABAAAIMAESAAAAAAAAAAAAAgABAIA=</HashCode>
+      <FileName>LoginDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.main" Collapsed="true">
+    <Position X="3.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABBAAAQAAiAIABABCCCgAAACAMAAAIgCAAgBAQBQIYo=</HashCode>
+      <FileName>main.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.OrderController">
+    <Position X="14" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAABgAIAAAAAQBAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>OrderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.OrderDetailsController">
+    <Position X="15.75" Y="1" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>OrderDetailsController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.OrderDetailsDTO">
+    <Position X="7.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAEAABEAAAAAAAAAAAAACAAAAhARAAAAA=</HashCode>
+      <FileName>OrderDetailsDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.OrderDTO">
+    <Position X="2" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAQAAAAAAEAAIgIAAAAAAAAAAgAAAEAAAgQAAAAA=</HashCode>
+      <FileName>OrderDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.Program" Collapsed="true">
+    <Position X="3.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.settings" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AggQAAEAACACABAAAATAIAECAAAEAoQQBDCAAAAFAAQ=</HashCode>
+      <FileName>settings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.SupplierController">
+    <Position X="14.25" Y="4" Width="2" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAADAAAAAAAABIAAAAEAAAAAAAA=</HashCode>
+      <FileName>SupplierController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.SupplierDTO">
+    <Position X="5.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAgAAIAAAgAAAAAAAAAAAAgAIECABAAAAEggAAAAA=</HashCode>
+      <FileName>SupplierDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.UserLoginDTO">
+    <Position X="7.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAEAAAAAAAAAAAAIIAESAAAEAABAAAAEAgAAAIA=</HashCode>
+      <FileName>UserLoginDTO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.Properties.Resources" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEAAAAAIAgAAChEAABAQWAIAACgAAABCAAAYA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="posui.Properties.Settings" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

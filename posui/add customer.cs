@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -25,23 +26,26 @@ namespace posui
 
         private void AddUserAddBtn_Click(object sender, EventArgs e)
         {
-            tblViewCustomer.ClearSelection();
-            CustomerDTO custDTO = new CustomerDTO();
-            custDTO.setNic(txtNIC.Text);
-            custDTO.setName(txtName.Text);
-            custDTO.setMobile(txtMobile.Text);
-            custDTO.setAddress(txtAddress.Text);
-            Boolean result = CustomerController.createNewUser(custDTO);
-            if (result)
+            if (ValidateText())
             {
-                MessageBox.Show("User added Successful");
-            }
-            else
-            {
-                MessageBox.Show("Error occured.. User not added to the database");
-            }
-            clear();
-            loadTable();
+                tblViewCustomer.ClearSelection();
+                CustomerDTO custDTO = new CustomerDTO();
+                custDTO.setNic(txtNIC.Text);
+                custDTO.setName(txtName.Text);
+                custDTO.setMobile(txtMobile.Text);
+                custDTO.setAddress(txtAddress.Text);
+                Boolean result = CustomerController.createNewUser(custDTO);
+                if (result)
+                {
+                    MessageBox.Show("User added Successful");
+                }
+                else
+                {
+                    MessageBox.Show("Error occured.. User not added to the database");
+                }
+                clear();
+                loadTable();
+            }           
         }
 
         private void AddUserDeleteBtn_Click(object sender, EventArgs e)
@@ -62,28 +66,27 @@ namespace posui
 
         private void AddUserUpdatelBtn_Click(object sender, EventArgs e)
         {
-            tblViewCustomer.ClearSelection();
-            Boolean result=true;
-            try
-            {
-                /*String NIC=txtNIC.Text;
-                String name=txtName.Text;
-                String mobile=txtMobile.Text;
-                String address=txtAddress.Text;*/
-                CustomerDTO custDTO = new CustomerDTO(txtNIC.Text, txtName.Text, txtMobile.Text, txtAddress.Text);
-                result=CustomerController.updateUser(custDTO);
+            if(ValidateText()){
+                tblViewCustomer.ClearSelection();
+                Boolean result = true;
+                try
+                {
+                    CustomerDTO custDTO = new CustomerDTO(txtNIC.Text, txtName.Text, txtMobile.Text, txtAddress.Text);
+                    result = CustomerController.updateUser(custDTO);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("User details are not updated due to an error");
+                    Console.WriteLine(ex.ToString());
+                }
+                if (result)
+                    MessageBox.Show("User details are updated successfully");
+                else
+                    MessageBox.Show("User details are not updated due to an error");
+                clear();
+                loadTable();
             }
-            catch(Exception ex)
-            {
-                MessageBox.Show("User details are not updated due to an error");
-                Console.WriteLine(ex.ToString());
-            }
-            if (result)
-                MessageBox.Show("User details are updated successfully");
-            else
-                MessageBox.Show("User details are not updated due to an error");
-            clear();
-            loadTable();
+            
         }
         void loadTable()
         {
@@ -114,6 +117,59 @@ namespace posui
             txtName.Text = "";
             txtAddress.Text = "";
             txtMobile.Text = "";
+            txtName.Focus();
+        }
+        private Boolean ValidateText()
+        {
+            Regex regex = new Regex("^[0-9]{10,10}");
+            Regex nameRegex = new Regex("^[a-z][A-Z]{1,}");
+            Regex nicRegex = new Regex("^[0-9]{9,9}[v|x]");
+
+            if (Validation.validateTextFields(txtName.Text))
+            {
+                if (Validation.validateTextFields(txtNIC.Text))
+                {                   
+                    if (Validation.validateTextFields(txtAddress.Text))
+                    {
+                        if (Validation.validateTextFields(txtMobile.Text))
+                        {
+                            if (regex.IsMatch(txtMobile.Text))
+                            {
+                                return true;
+                            }
+                            else {
+                                MessageBox.Show("Use 10 charactors only");
+                                return false;
+                            }
+                            
+                        }
+                        else
+                        {
+                            MessageBox.Show("Please fill the mobile");
+                            txtMobile.Focus();
+                            return false;
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please fill the Address");
+                        txtAddress.Focus();
+                        return false;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Please fill the NIC");
+                    txtNIC.Focus();
+                    return false;
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please fill the name");
+                txtName.Focus();
+                return false;
+            }
         }
     }
 }

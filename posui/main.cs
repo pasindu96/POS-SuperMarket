@@ -41,14 +41,18 @@ namespace posui
 
         public main()
         {
+            //addCustomerbtn.Enabled = false;
             this.MouseDown += new MouseEventHandler(move_window); // Form Drag code
             InitializeComponent();
         }
-        public main(String user)
+        private string position = "U";
+        public main(String user,string post)
         {
+            position = (post == "M") ? "M" : "U";   
             this.MouseDown += new MouseEventHandler(move_window); // Form Drag code
             InitializeComponent();
             lblUsername.Text = user;
+            
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -58,11 +62,14 @@ namespace posui
 
         private void bunifuFlatButton1_Click(object sender, EventArgs e)
         {
-            homepanel.Controls.Clear();    // load new_user panel
-            inventory f = new inventory();
-            f.TopLevel = false;
-            homepanel.Controls.Add(f);
-            f.Show();
+            if (position == "M")
+            {
+                homepanel.Controls.Clear();    // load new_user panel
+                inventory f = new inventory();
+                f.TopLevel = false;
+                homepanel.Controls.Add(f);
+                f.Show();
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -89,20 +96,28 @@ namespace posui
 
         private void suppliersbtn_Click(object sender, EventArgs e)
         {
-            homepanel.Controls.Clear();    // load new_user panel
-            supplier f = new supplier();
-            f.TopLevel = false;
-            homepanel.Controls.Add(f);
-            f.Show();
+            if (position == "M")
+            {
+                homepanel.Controls.Clear();    // load new_user panel
+                supplier f = new supplier();
+                f.TopLevel = false;
+                homepanel.Controls.Add(f);
+                f.Show();
+            }
+            
         }
 
         private void settingsbtn_Click(object sender, EventArgs e)
         {
-            homepanel.Controls.Clear();    // load new_user panel
-            settings f = new settings();
-            f.TopLevel = false;
-            homepanel.Controls.Add(f);
-            f.Show();
+            if (position == "M")
+            {
+                homepanel.Controls.Clear();    // load new_user panel
+                settings f = new settings();
+                f.TopLevel = false;
+                homepanel.Controls.Add(f);
+                f.Show();
+            }
+            
         }
 
         private void Checkoutbtn_Click(object sender, EventArgs e)
@@ -112,6 +127,18 @@ namespace posui
             f.TopLevel = false;
             homepanel.Controls.Add(f);
             f.Show();
+        }
+
+        private void Reportsbtn_Click(object sender, EventArgs e)
+        {
+            if (position == "M")
+            {
+                homepanel.Controls.Clear();    // load new_user panel
+                report f = new report();
+                f.TopLevel = false;
+                homepanel.Controls.Add(f);
+                f.Show();
+            }
         }
     }
     

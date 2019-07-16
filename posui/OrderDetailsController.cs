@@ -13,6 +13,7 @@ namespace posui
         static MySqlConnection conn = DBUtils.GetDBConnection();
         public static Boolean addOrderDetails(OrderDetailsDTO odDTO)
         {
+            
             int result;
             try
              {
