@@ -33,35 +33,32 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnDeleteUser = new Bunifu.Framework.UI.BunifuImageButton();
-            this.settingsRecoverBtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.btnAddUser = new Bunifu.Framework.UI.BunifuImageButton();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.grpPosition = new System.Windows.Forms.GroupBox();
+            this.rdbUser = new System.Windows.Forms.RadioButton();
+            this.rdbManager = new System.Windows.Forms.RadioButton();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnUserSearch = new System.Windows.Forms.Button();
             this.txtUserSearch = new System.Windows.Forms.TextBox();
             this.tblCurrentUsers = new System.Windows.Forms.DataGridView();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.rdbManager = new System.Windows.Forms.RadioButton();
-            this.grpPosition = new System.Windows.Forms.GroupBox();
-            this.rdbUser = new System.Windows.Forms.RadioButton();
             this.username = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.position = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteUser)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsRecoverBtn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddUser)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.grpPosition.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblCurrentUsers)).BeginInit();
-            this.grpPosition.SuspendLayout();
             this.SuspendLayout();
             // 
             // bunifuElipse1
@@ -86,7 +83,7 @@
             this.btnDeleteUser.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnDeleteUser.Image = global::posui.Properties.Resources.delete_user;
             this.btnDeleteUser.ImageActive = null;
-            this.btnDeleteUser.Location = new System.Drawing.Point(441, 153);
+            this.btnDeleteUser.Location = new System.Drawing.Point(412, 153);
             this.btnDeleteUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnDeleteUser.Name = "btnDeleteUser";
             this.btnDeleteUser.Size = new System.Drawing.Size(95, 82);
@@ -96,27 +93,12 @@
             this.btnDeleteUser.Zoom = 10;
             this.btnDeleteUser.Click += new System.EventHandler(this.bunifuImageButton3_Click);
             // 
-            // settingsRecoverBtn
-            // 
-            this.settingsRecoverBtn.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.settingsRecoverBtn.Image = global::posui.Properties.Resources.update_user;
-            this.settingsRecoverBtn.ImageActive = null;
-            this.settingsRecoverBtn.Location = new System.Drawing.Point(277, 153);
-            this.settingsRecoverBtn.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.settingsRecoverBtn.Name = "settingsRecoverBtn";
-            this.settingsRecoverBtn.Size = new System.Drawing.Size(95, 82);
-            this.settingsRecoverBtn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.settingsRecoverBtn.TabIndex = 1;
-            this.settingsRecoverBtn.TabStop = false;
-            this.settingsRecoverBtn.Zoom = 10;
-            this.settingsRecoverBtn.Click += new System.EventHandler(this.bunifuImageButton2_Click);
-            // 
             // btnAddUser
             // 
             this.btnAddUser.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnAddUser.Image = global::posui.Properties.Resources.add_new_user;
             this.btnAddUser.ImageActive = null;
-            this.btnAddUser.Location = new System.Drawing.Point(108, 153);
+            this.btnAddUser.Location = new System.Drawing.Point(152, 153);
             this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.Size = new System.Drawing.Size(95, 82);
@@ -145,6 +127,61 @@
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "User Details";
+            // 
+            // grpPosition
+            // 
+            this.grpPosition.Controls.Add(this.rdbUser);
+            this.grpPosition.Controls.Add(this.rdbManager);
+            this.grpPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpPosition.Location = new System.Drawing.Point(0, 204);
+            this.grpPosition.Name = "grpPosition";
+            this.grpPosition.Size = new System.Drawing.Size(304, 100);
+            this.grpPosition.TabIndex = 6;
+            this.grpPosition.TabStop = false;
+            this.grpPosition.Text = "Position";
+            // 
+            // rdbUser
+            // 
+            this.rdbUser.AutoSize = true;
+            this.rdbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbUser.Location = new System.Drawing.Point(157, 43);
+            this.rdbUser.Name = "rdbUser";
+            this.rdbUser.Size = new System.Drawing.Size(71, 28);
+            this.rdbUser.TabIndex = 6;
+            this.rdbUser.TabStop = true;
+            this.rdbUser.Text = "User";
+            this.rdbUser.UseVisualStyleBackColor = true;
+            // 
+            // rdbManager
+            // 
+            this.rdbManager.AutoSize = true;
+            this.rdbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rdbManager.Location = new System.Drawing.Point(7, 43);
+            this.rdbManager.Name = "rdbManager";
+            this.rdbManager.Size = new System.Drawing.Size(110, 28);
+            this.rdbManager.TabIndex = 5;
+            this.rdbManager.TabStop = true;
+            this.rdbManager.Text = "Manager";
+            this.rdbManager.UseVisualStyleBackColor = true;
+            // 
+            // txtName
+            // 
+            this.txtName.Location = new System.Drawing.Point(192, 145);
+            this.txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(175, 26);
+            this.txtName.TabIndex = 4;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(8, 139);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(68, 25);
+            this.label7.TabIndex = 3;
+            this.label7.Text = "Name";
             // 
             // txtPassword
             // 
@@ -187,25 +224,16 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(123, 238);
+            this.label4.Location = new System.Drawing.Point(167, 238);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(63, 15);
             this.label4.TabIndex = 3;
             this.label4.Text = "Add New";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(296, 238);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(59, 15);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Recover";
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(462, 238);
+            this.label6.Location = new System.Drawing.Point(433, 238);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 15);
             this.label6.TabIndex = 3;
@@ -252,61 +280,6 @@
             this.tblCurrentUsers.Size = new System.Drawing.Size(344, 204);
             this.tblCurrentUsers.TabIndex = 0;
             // 
-            // txtName
-            // 
-            this.txtName.Location = new System.Drawing.Point(192, 145);
-            this.txtName.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(175, 26);
-            this.txtName.TabIndex = 4;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(8, 139);
-            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 25);
-            this.label7.TabIndex = 3;
-            this.label7.Text = "Name";
-            // 
-            // rdbManager
-            // 
-            this.rdbManager.AutoSize = true;
-            this.rdbManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbManager.Location = new System.Drawing.Point(7, 43);
-            this.rdbManager.Name = "rdbManager";
-            this.rdbManager.Size = new System.Drawing.Size(110, 28);
-            this.rdbManager.TabIndex = 5;
-            this.rdbManager.TabStop = true;
-            this.rdbManager.Text = "Manager";
-            this.rdbManager.UseVisualStyleBackColor = true;
-            // 
-            // grpPosition
-            // 
-            this.grpPosition.Controls.Add(this.rdbUser);
-            this.grpPosition.Controls.Add(this.rdbManager);
-            this.grpPosition.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpPosition.Location = new System.Drawing.Point(0, 204);
-            this.grpPosition.Name = "grpPosition";
-            this.grpPosition.Size = new System.Drawing.Size(304, 100);
-            this.grpPosition.TabIndex = 6;
-            this.grpPosition.TabStop = false;
-            this.grpPosition.Text = "Position";
-            // 
-            // rdbUser
-            // 
-            this.rdbUser.AutoSize = true;
-            this.rdbUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbUser.Location = new System.Drawing.Point(157, 43);
-            this.rdbUser.Name = "rdbUser";
-            this.rdbUser.Size = new System.Drawing.Size(71, 28);
-            this.rdbUser.TabIndex = 6;
-            this.rdbUser.TabStop = true;
-            this.rdbUser.Text = "User";
-            this.rdbUser.UseVisualStyleBackColor = true;
-            // 
             // username
             // 
             this.username.HeaderText = "Username";
@@ -330,11 +303,9 @@
             this.ClientSize = new System.Drawing.Size(1140, 660);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnDeleteUser);
-            this.Controls.Add(this.settingsRecoverBtn);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -344,15 +315,14 @@
             this.Text = "settings";
             this.Load += new System.EventHandler(this.settings_Load);
             ((System.ComponentModel.ISupportInitialize)(this.btnDeleteUser)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.settingsRecoverBtn)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddUser)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.grpPosition.ResumeLayout(false);
+            this.grpPosition.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tblCurrentUsers)).EndInit();
-            this.grpPosition.ResumeLayout(false);
-            this.grpPosition.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -364,7 +334,6 @@
         private Bunifu.Framework.UI.BunifuImageButton btnAddUser;
         private System.Windows.Forms.Label label1;
         private Bunifu.Framework.UI.BunifuImageButton btnDeleteUser;
-        private Bunifu.Framework.UI.BunifuImageButton settingsRecoverBtn;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TextBox txtUsername;
@@ -372,7 +341,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.DataGridView tblCurrentUsers;

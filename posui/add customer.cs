@@ -133,7 +133,7 @@ namespace posui
                     {
                         if (Validation.validateTextFields(txtMobile.Text))
                         {
-                            if (regex.IsMatch(txtMobile.Text))
+                            if (txtMobile.Text.Length==10)
                             {
                                 return true;
                             }

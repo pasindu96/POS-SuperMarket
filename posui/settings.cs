@@ -36,17 +36,20 @@ namespace posui
             {
                 MessageBox.Show("Please fill all the information");
             }
-            UserLoginDTO userLoginDTO = new UserLoginDTO(username,name,password,position);
-            Boolean result=LoginController.createUser(userLoginDTO);
-            if (result)
-            {
-                MessageBox.Show("User added succesfully");
-            }
             else
             {
-                MessageBox.Show("User added failed due to an error");
+                UserLoginDTO userLoginDTO = new UserLoginDTO(username, name, password, position);
+                Boolean result = LoginController.createUser(userLoginDTO);
+                if (result)
+                {
+                    MessageBox.Show("User added succesfully");
+                }
+                else
+                {
+                    MessageBox.Show("User added failed due to an error");
+                }
+                loadUsers();
             }
-            loadUsers();
         }
 
         private void bunifuImageButton2_Click(object sender, EventArgs e)

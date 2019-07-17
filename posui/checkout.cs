@@ -163,21 +163,28 @@ namespace posui
 
             if (e.KeyChar == (char)13)
             {
-                if (Validation.validateTextFields(txtQty.Text)|| e.KeyChar != (char)13)
-                {
-                    finalTot += (double.Parse(txtUnitPrice.Text) * (int.Parse(txtQty.Text)));
-                    orderDetails.Add(new OrderDetailsDTO(txtOrderID.Text, codeOfItem, int.Parse(txtQty.Text)));
-                    String[] row = new String[] { txtItemCode.Text, (cmbItemDescription.SelectedItem).ToString(),  txtUnitPrice.Text, txtQty.Text, (double.Parse(txtUnitPrice.Text) * (int.Parse(txtQty.Text))).ToString() };
-                    tblCheckOut.Rows.Add(row);
-                    txtTotalAmount.Text = finalTot.ToString();
-                    ItemController.updateStockQty(new ItemDTO(codeOfItem, "", (int.Parse(txtQtyOnHand.Text) - int.Parse(txtQty.Text)), 0.0));
-                    txtQtyOnHand.Text = (int.Parse(txtQtyOnHand.Text) - int.Parse(txtQty.Text)).ToString();
+                try
+                { 
+                    if (Validation.validateTextFields(txtQty.Text)|| e.KeyChar != (char)13)
+                    {
+                        finalTot += (double.Parse(txtUnitPrice.Text) * (int.Parse(txtQty.Text)));
+                        orderDetails.Add(new OrderDetailsDTO(txtOrderID.Text, codeOfItem, int.Parse(txtQty.Text)));
+                        String[] row = new String[] { txtItemCode.Text, (cmbItemDescription.SelectedItem).ToString(),  txtUnitPrice.Text, txtQty.Text, (double.Parse(txtUnitPrice.Text) * (int.Parse(txtQty.Text))).ToString() };
+                        tblCheckOut.Rows.Add(row);
+                        txtTotalAmount.Text = finalTot.ToString();
+                        ItemController.updateStockQty(new ItemDTO(codeOfItem, "", (int.Parse(txtQtyOnHand.Text) - int.Parse(txtQty.Text)), 0.0));
+                        txtQtyOnHand.Text = (int.Parse(txtQtyOnHand.Text) - int.Parse(txtQty.Text)).ToString();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please enter the quantity");
+                    }
                 }
-                else
+                catch (Exception)
                 {
-                    MessageBox.Show("Please enter the quantity");
+                    MessageBox.Show("Please enter only numbers to the qty");
                 }
-                
+
             }    
         }
         private void TxtCash_KeyPress(object sender, KeyPressEventArgs e)

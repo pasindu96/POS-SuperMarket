@@ -37,7 +37,7 @@ namespace posui
             catch (Exception ex)
             {
                 Console.WriteLine("Error: " + ex.Message);
-                MessageBox.Show("exception occured");
+               // MessageBox.Show("exception occured");
                 conn.Close();
                 return false;
             }

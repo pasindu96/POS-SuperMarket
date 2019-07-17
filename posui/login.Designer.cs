@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login));
             this.loginForm = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.txtPassword1 = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnCancel = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,7 +41,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.minimizebtn = new Bunifu.Framework.UI.BunifuImageButton();
             this.closebtn = new Bunifu.Framework.UI.BunifuImageButton();
-            this.txtPassword1 = new System.Windows.Forms.TextBox();
             this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.minimizebtn)).BeginInit();
@@ -69,6 +69,18 @@
             this.mainPanel.Name = "mainPanel";
             this.mainPanel.Size = new System.Drawing.Size(316, 422);
             this.mainPanel.TabIndex = 0;
+            // 
+            // txtPassword1
+            // 
+            this.txtPassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtPassword1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword1.Location = new System.Drawing.Point(29, 226);
+            this.txtPassword1.Multiline = true;
+            this.txtPassword1.Name = "txtPassword1";
+            this.txtPassword1.PasswordChar = '*';
+            this.txtPassword1.Size = new System.Drawing.Size(250, 37);
+            this.txtPassword1.TabIndex = 5;
+            this.txtPassword1.Text = "password";
             // 
             // pictureBox1
             // 
@@ -160,7 +172,7 @@
             // 
             // txtUserName
             // 
-            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.txtUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.txtUserName.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtUserName.BackgroundImage")));
             this.txtUserName.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
@@ -210,18 +222,6 @@
             this.closebtn.TabStop = false;
             this.closebtn.Zoom = 10;
             this.closebtn.Click += new System.EventHandler(this.closebtn_Click);
-            // 
-            // txtPassword1
-            // 
-            this.txtPassword1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.txtPassword1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword1.Location = new System.Drawing.Point(29, 226);
-            this.txtPassword1.Multiline = true;
-            this.txtPassword1.Name = "txtPassword1";
-            this.txtPassword1.PasswordChar = '*';
-            this.txtPassword1.Size = new System.Drawing.Size(250, 37);
-            this.txtPassword1.TabIndex = 5;
-            this.txtPassword1.Text = "password";
             // 
             // login
             // 

@@ -54,7 +54,7 @@ namespace posui
             {
                 Console.WriteLine("error : " + ex.ToString());
                 clear();
-                MessageBox.Show("Enter only accepted types only");
+                //MessageBox.Show("Enter  accepted data types only");
             }
         }
 
@@ -84,7 +84,7 @@ namespace posui
             {
                 Console.WriteLine("error : "+ex.ToString());
                 clear();
-                MessageBox.Show("Enter only accepted types only");
+                MessageBox.Show("Enter  accepted data types only");
             }
             
         }
